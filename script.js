@@ -179,3 +179,33 @@ div.appendChild(p2)
 container.appendChild(div)
 
 //dynamic demand
+const btn=document.querySelector("#btn")
+
+btn.onclick=()=>alert("Hello there!")
+//problem with this is that we can only have 1 onclick Property
+
+
+//therefore
+const btn2=document.querySelector("#btn2")
+btn2.addEventListener("click",()=>{
+    alert("Hello World!")
+})
+
+//using function inside the listeners
+function alertMessage(){
+    alert("Hello there!")
+}
+
+const btn3=document.querySelector("#btn3")
+btn3.addEventListener("click",alertMessage)
+
+const btn4=document.querySelector("#btn4")
+btn4.onclick=alertMessage
+
+const buttons=document.querySelectorAll("button")
+
+buttons.forEach((button) => {
+    button.addEventListener("click" ,() => {
+        alert(button.id);
+    });
+})
